@@ -82,6 +82,9 @@ p {
 ===================== */
 .header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -122,12 +125,14 @@ p {
 }
 
 .nav-link {
+  position: relative; /* required for underline pseudo-element */
   display: block;
   padding: 24px 0;
   font-weight: 500;
   color: #2e2f42;
   letter-spacing: 0.02em;
   line-height: 1.5;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
@@ -135,8 +140,20 @@ p {
   color: #404bbf;
 }
 
-.current {
+/* Active link */
+.nav-link.current {
   color: #404bbf;
+}
+
+.nav-link.current::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  background-color: #404bbf;
+  border-radius: 2px;
 }
 
 .header-address {
@@ -155,6 +172,7 @@ p {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link:hover,
@@ -191,6 +209,7 @@ p {
   line-height: 1.5;
   letter-spacing: 0.04em;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -293,6 +312,12 @@ p {
   height: 40px;
   border-radius: 50%;
   background-color: #4d5ae5;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: #404bbf;
 }
 
 .social-icon {
@@ -300,7 +325,6 @@ p {
   height: 16px;
   fill: #f4f4fd;
 }
-
 
 /* =====================
   Footer
@@ -312,8 +336,8 @@ p {
 
 .footer-container {
   display: flex;
-  align-items: baseline; /* ключове: як у макеті */
-  gap: 120px; /* ключове: нормальна відстань між колонками */
+  align-items: baseline;
+  gap: 120px;
 }
 
 .footer-brand {
@@ -331,13 +355,13 @@ p {
   color: #f4f4fd;
 }
 
-/* Footer Social — FIX */
+/* Footer Social */
 .footer-social-title {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #ffffff;
-  margin-bottom: 16px; /* щоб заголовок був над іконками */
+  margin-bottom: 16px;
 }
 
 .footer-social-list {
@@ -353,6 +377,7 @@ p {
   height: 40px;
   border-radius: 50%;
   background-color: #4d5ae5;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-social-link:hover,
