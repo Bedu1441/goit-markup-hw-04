@@ -346,9 +346,9 @@ p {
 }
 
 .social-icon {
-  width: 16px;
-  height: 16px;
-  fill: var(--cloud);
+  width: 24px;
+  height: 24px;
+  color: #F4F4FD;
 }
 
 /* =====================
@@ -481,5 +481,5 @@ p {
 }
 
 .footer-social-icon {
-  fill: var(--cloud);
+  color: #F4F4FD;
 }
